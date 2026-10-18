@@ -1,6 +1,7 @@
 import { MetricCard } from "@/components/dashboard/MetricCard";
 import { RecentContacts } from "@/components/dashboard/RecentContacts";
-import { METRICS, RECENT_CONTACTS } from "@/lib/mock-data";
+import { getRecentContacts } from "@/lib/contacts";
+import { METRICS } from "@/lib/mock-data";
 
 export default function DashboardPage() {
   return (
@@ -23,7 +24,7 @@ export default function DashboardPage() {
         ))}
       </section>
 
-      <RecentContacts contacts={RECENT_CONTACTS} />
+      <RecentContacts contacts={getRecentContacts(5)} />
     </div>
   );
 }

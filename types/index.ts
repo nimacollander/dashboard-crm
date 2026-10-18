@@ -25,8 +25,31 @@ export interface Contact {
   id: string;
   name: string;
   email: string;
+  phone: string;
+  jobTitle: string;
   company: string;
+  location: string;
   status: ContactStatus;
   dealValue: number;
   lastContacted: string; // ISO date
+  createdAt: string; // ISO date
+}
+
+export type ContactStatusFilter = ContactStatus | "all";
+export type ContactSortKey = "name" | "dealValue" | "lastContacted";
+export type SortOrder = "asc" | "desc";
+
+export interface ContactFilters {
+  q: string;
+  status: ContactStatusFilter;
+  sort: ContactSortKey;
+  order: SortOrder;
+}
+
+export type StatusCounts = Record<ContactStatusFilter, number>;
+
+export interface ContactQueryResult {
+  contacts: Contact[];
+  statusCounts: StatusCounts;
+  total: number;
 }

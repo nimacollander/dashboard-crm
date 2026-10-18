@@ -1,3 +1,4 @@
+import Form from "next/form";
 import { BellIcon, MenuIcon, SearchIcon } from "@/components/icons";
 
 interface HeaderProps {
@@ -21,15 +22,17 @@ export function Header({ title, onMenuClick }: HeaderProps) {
         {title}
       </span>
 
-      <div className="relative ml-auto w-full max-w-xs">
+      {/* Submitting navigates client-side to /contacts?q=… */}
+      <Form action="/contacts" role="search" className="relative ml-auto w-full max-w-xs">
         <SearchIcon className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-zinc-400" />
         <input
           type="search"
-          placeholder="Search contacts, deals…"
-          aria-label="Search"
+          name="q"
+          placeholder="Search contacts…"
+          aria-label="Search contacts"
           className="w-full rounded-lg border border-zinc-200 bg-zinc-50 py-2 pr-3 pl-9 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-500/20 focus:outline-none"
         />
-      </div>
+      </Form>
 
       <button
         type="button"
