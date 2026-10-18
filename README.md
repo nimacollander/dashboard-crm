@@ -180,12 +180,12 @@ This is a portfolio project, so some parts are simplified on purpose:
 
 ## Roadmap
 
-- [ ] Postgres database (Neon + Drizzle) in place of the in-memory store
-- [ ] Deploy to Vercel with a live demo link
+- [ ] A real database in place of the in-memory store
+- [ ] Deployment with a live demo link
 - [ ] Forms to create and edit contacts and deals
-- [ ] Authentication with a one-click demo account
+- [ ] User accounts with a one-click demo login
 - [ ] Settings page (profile, monthly quota)
-- [ ] Unit tests (Vitest), a browser test for drag and drop (Playwright), and CI with GitHub Actions
+- [ ] Automated tests and continuous integration
 - [ ] Dark mode
 
 ## Author
