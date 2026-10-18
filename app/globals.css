@@ -1,10 +1,71 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-plex-sans);
+  --font-display: var(--font-bricolage);
+}
+
+/*
+ * Pulse design tokens.
+ * Neutrals use Tailwind's slate (cool blue-gray, ink = slate-900).
+ * The accent is a single blue ramp, shared with the charts so UI and data
+ * speak the same color: accent-500 is the "closed revenue" series.
+ */
+@theme {
+  --color-canvas: #f3f5f8;
+
+  --color-accent-50: #eef5fe;
+  --color-accent-100: #cde2fb;
+  --color-accent-200: #9ec5f4;
+  --color-accent-300: #6da7ec;
+  --color-accent-400: #3987e5;
+  --color-accent-500: #2a78d6;
+  --color-accent-600: #256abf;
+  --color-accent-700: #1c5cab;
+
+  /* Status text, used with an arrow icon so color never carries meaning alone. */
+  --color-positive: #006300;
+  --color-negative: #c02f2f;
 }
 
 body {
-  background-color: var(--color-zinc-50);
+  background-color: var(--color-canvas);
+}
+
+/* The dashboard's one load moment: the revenue line draws itself in. */
+@keyframes draw-line {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-draw-line {
+  stroke-dasharray: 1;
+  animation: draw-line 1100ms cubic-bezier(0.33, 1, 0.68, 1) both;
+}
+
+.animate-fade-in-late {
+  animation: fade-in 400ms ease-out 900ms both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

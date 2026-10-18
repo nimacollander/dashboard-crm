@@ -25,14 +25,20 @@ export function NavLinks({ onNavigate }: NavLinksProps) {
               href={href}
               onClick={onNavigate}
               aria-current={active ? "page" : undefined}
-              className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+              className={`relative flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:outline-none ${
                 active
-                  ? "bg-indigo-50 text-indigo-700"
-                  : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+                  ? "bg-white/[0.08] text-white"
+                  : "text-slate-400 hover:bg-white/5 hover:text-white"
               }`}
             >
+              {active && (
+                <span
+                  className="absolute inset-y-2 left-0 w-0.5 rounded-full bg-accent-400"
+                  aria-hidden="true"
+                />
+              )}
               <Icon
-                className={`size-5 shrink-0 ${active ? "text-indigo-600" : "text-zinc-400"}`}
+                className={`size-[18px] shrink-0 ${active ? "text-accent-300" : "text-slate-500"}`}
               />
               {label}
             </Link>
@@ -51,9 +57,9 @@ export function NavLinksFallback() {
         <li key={href}>
           <Link
             href={href}
-            className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-zinc-600"
+            className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-slate-400"
           >
-            <Icon className="size-5 shrink-0 text-zinc-400" />
+            <Icon className="size-[18px] shrink-0 text-slate-500" />
             {label}
           </Link>
         </li>

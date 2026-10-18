@@ -27,14 +27,14 @@ export function StatusFilter({ filters, counts }: StatusFilterProps) {
                 aria-current={active ? "page" : undefined}
                 className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
                   active
-                    ? "bg-zinc-900 text-white"
-                    : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900"
+                    ? "bg-slate-900 text-white"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
                 }`}
               >
                 {STATUS_FILTER_LABELS[status]}
                 <span
                   className={`rounded-full px-1.5 text-xs tabular-nums ${
-                    active ? "bg-white/20 text-white" : "bg-zinc-100 text-zinc-500"
+                    active ? "bg-white/20 text-white" : "bg-slate-100 text-slate-500"
                   }`}
                 >
                   {counts[status]}

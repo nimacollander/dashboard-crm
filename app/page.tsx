@@ -1,37 +1,34 @@
-import { MetricCard } from "@/components/dashboard/MetricCard";
+import { ClosingSoon } from "@/components/dashboard/ClosingSoon";
+import { KpiStrip } from "@/components/dashboard/KpiStrip";
+import { PipelineByStage } from "@/components/dashboard/PipelineByStage";
 import { RecentContacts } from "@/components/dashboard/RecentContacts";
-import { getRecentContacts } from "@/lib/contacts";
-import { isOpenDeal } from "@/lib/deal-stages";
-import { getDeals } from "@/lib/deals";
-import { METRICS } from "@/lib/mock-data";
+import { RevenuePaceCard } from "@/components/dashboard/RevenuePaceCard";
+import { getDashboardData } from "@/lib/dashboard";
 
 export default async function DashboardPage() {
-  const activeDeals = (await getDeals()).filter(isOpenDeal).length;
-  const metrics = METRICS.map((metric) =>
-    metric.id === "deals" ? { ...metric, value: String(activeDeals) } : metric,
-  );
+  const { revenue, kpis, pipeline, closingSoon, recentContacts } =
+    await getDashboardData();
 
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-2xl font-semibold tracking-tight text-zinc-900">
-          Dashboard
-        </h1>
-        <p className="mt-1 text-sm text-zinc-500">
-          Here&apos;s what&apos;s happening with your pipeline this month.
+    <div className="space-y-6">
+      <header>
+        <p className="text-xs font-semibold tracking-wider text-accent-600 uppercase">
+          {revenue.monthLabel} · Day {revenue.today} of {revenue.daysInMonth}
         </p>
+        <h1 className="mt-1 font-display text-3xl font-semibold tracking-tight text-slate-900">
+          Sales overview
+        </h1>
+      </header>
+
+      <RevenuePaceCard data={revenue} />
+      <KpiStrip kpis={kpis} />
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        <PipelineByStage stages={pipeline} />
+        <ClosingSoon deals={closingSoon} />
       </div>
 
-      <section
-        aria-label="Key metrics"
-        className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"
-      >
-        {metrics.map((metric) => (
-          <MetricCard key={metric.id} metric={metric} />
-        ))}
-      </section>
-
-      <RecentContacts contacts={getRecentContacts(5)} />
+      <RecentContacts contacts={recentContacts} />
     </div>
   );
 }

@@ -23,11 +23,11 @@ export function PipelineSummary({ deals }: PipelineSummaryProps) {
     <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3">
       {stats.map((stat) => (
         <Card key={stat.label} className="px-5 py-4">
-          <dt className="text-sm font-medium text-zinc-500">{stat.label}</dt>
-          <dd className="mt-1 text-2xl font-semibold tracking-tight text-zinc-900 tabular-nums">
+          <dt className="text-sm font-medium text-slate-500">{stat.label}</dt>
+          <dd className="mt-1 text-2xl font-semibold tracking-tight text-slate-900">
             {stat.value}
           </dd>
-          <dd className="mt-0.5 text-xs text-zinc-500">{stat.detail}</dd>
+          <dd className="mt-0.5 text-xs text-slate-500">{stat.detail}</dd>
         </Card>
       ))}
     </dl>

@@ -7,7 +7,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 export function Card({ children, className = "", ...props }: CardProps) {
   return (
     <div
-      className={`rounded-xl border border-zinc-200 bg-white shadow-sm ${className}`}
+      className={`rounded-xl border border-slate-200/80 bg-white shadow-[0_1px_2px_rgb(15_23_42/0.04)] ${className}`}
       {...props}
     >
       {children}
@@ -23,14 +23,14 @@ interface CardHeaderProps {
 
 export function CardHeader({ title, description, action }: CardHeaderProps) {
   return (
-    <div className="flex items-start justify-between gap-4 border-b border-zinc-100 px-5 py-4">
+    <div className="flex items-start justify-between gap-4 border-b border-slate-100 px-5 py-4">
       <div>
-        <h2 className="text-sm font-semibold text-zinc-900">{title}</h2>
+        <h2 className="text-sm font-semibold text-slate-900">{title}</h2>
         {description && (
-          <p className="mt-0.5 text-sm text-zinc-500">{description}</p>
+          <p className="mt-0.5 text-sm text-slate-500">{description}</p>
         )}
       </div>
-      {action}
+      {action && <div className="shrink-0 whitespace-nowrap">{action}</div>}
     </div>
   );
 }

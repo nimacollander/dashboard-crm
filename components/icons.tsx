@@ -225,3 +225,12 @@ export function CalendarIcon(props: IconProps) {
     </BaseIcon>
   );
 }
+
+/** The Pulse logo mark: a single heartbeat line. */
+export function PulseMarkIcon(props: IconProps) {
+  return (
+    <BaseIcon strokeWidth={2.25} {...props}>
+      <path d="M2 12h4.5l2.5-6 4 12 2.5-6H22" />
+    </BaseIcon>
+  );
+}

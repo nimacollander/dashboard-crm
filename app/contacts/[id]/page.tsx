@@ -39,7 +39,7 @@ export default function ContactPage({ params }: PageProps<"/contacts/[id]">) {
     <div className="space-y-6">
       <Link
         href="/contacts"
-        className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-500 hover:text-zinc-900"
+        className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-900"
       >
         <ArrowLeftIcon className="size-4" />
         All contacts
@@ -69,26 +69,26 @@ async function ContactDetails({ params }: ContactDetailsProps) {
         <ContactAvatar name={contact.name} size="lg" />
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
-            <h1 className="text-2xl font-semibold tracking-tight text-zinc-900">
+            <h1 className="text-2xl font-display font-semibold tracking-tight text-slate-900">
               {contact.name}
             </h1>
             <StatusBadge status={contact.status} />
           </div>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-sm text-slate-500">
             {contact.jobTitle} at {contact.company}
           </p>
         </div>
         <div className="flex gap-2">
           <a
             href={`mailto:${contact.email}`}
-            className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-3.5 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-500"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent-600 px-3.5 py-2 text-sm font-medium text-white shadow-sm hover:bg-accent-500"
           >
             <MailIcon className="size-4" />
             Email
           </a>
           <a
             href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`}
-            className="inline-flex items-center gap-2 rounded-lg border border-zinc-200 bg-white px-3.5 py-2 text-sm font-medium text-zinc-700 shadow-sm hover:bg-zinc-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50"
           >
             <PhoneIcon className="size-4" />
             Call
@@ -99,9 +99,9 @@ async function ContactDetails({ params }: ContactDetailsProps) {
       <div className="grid gap-6 lg:grid-cols-3">
         <Card className="lg:col-span-2">
           <CardHeader title="Contact details" />
-          <dl className="divide-y divide-zinc-100">
+          <dl className="divide-y divide-slate-100">
             <DetailRow icon={MailIcon} label="Email">
-              <a href={`mailto:${contact.email}`} className="text-indigo-600 hover:underline">
+              <a href={`mailto:${contact.email}`} className="text-accent-600 hover:underline">
                 {contact.email}
               </a>
             </DetailRow>
@@ -121,20 +121,20 @@ async function ContactDetails({ params }: ContactDetailsProps) {
           <CardHeader title="Deal summary" />
           <dl className="space-y-4 p-5">
             <div>
-              <dt className="text-xs font-medium text-zinc-500">Deal value</dt>
-              <dd className="mt-1 text-2xl font-semibold tracking-tight text-zinc-900 tabular-nums">
+              <dt className="text-xs font-medium text-slate-500">Deal value</dt>
+              <dd className="mt-1 text-2xl font-semibold tracking-tight text-slate-900 tabular-nums">
                 {formatCurrency(contact.dealValue)}
               </dd>
             </div>
             <div>
-              <dt className="text-xs font-medium text-zinc-500">Last contacted</dt>
-              <dd className="mt-1 text-sm text-zinc-900">
+              <dt className="text-xs font-medium text-slate-500">Last contacted</dt>
+              <dd className="mt-1 text-sm text-slate-900">
                 {formatDate(contact.lastContacted)}
               </dd>
             </div>
             <div>
-              <dt className="text-xs font-medium text-zinc-500">Added to CRM</dt>
-              <dd className="mt-1 text-sm text-zinc-900">
+              <dt className="text-xs font-medium text-slate-500">Added to CRM</dt>
+              <dd className="mt-1 text-sm text-slate-900">
                 {formatDate(contact.createdAt)}
               </dd>
             </div>
@@ -147,29 +147,29 @@ async function ContactDetails({ params }: ContactDetailsProps) {
           title="Deals"
           description={`${deals.length} ${deals.length === 1 ? "deal" : "deals"} with ${contact.company}`}
           action={
-            <Link href="/deals" className="text-sm font-medium text-indigo-600 hover:text-indigo-700">
+            <Link href="/deals" className="text-sm font-medium text-accent-600 hover:text-accent-700">
               View pipeline
             </Link>
           }
         />
         {deals.length > 0 ? (
-          <ul className="divide-y divide-zinc-100">
+          <ul className="divide-y divide-slate-100">
             {deals.map((deal) => {
               const stage = DEAL_STAGES.find((item) => item.id === deal.stage);
               return (
                 <li key={deal.id} className="flex items-center justify-between gap-4 px-5 py-3.5 text-sm">
                   <div className="min-w-0">
-                    <p className="truncate font-medium text-zinc-900">{deal.title}</p>
-                    <p className="mt-0.5 text-xs text-zinc-500">
+                    <p className="truncate font-medium text-slate-900">{deal.title}</p>
+                    <p className="mt-0.5 text-xs text-slate-500">
                       Expected close {formatDate(deal.expectedClose)} · {deal.owner}
                     </p>
                   </div>
                   <div className="flex shrink-0 items-center gap-4">
-                    <span className="flex items-center gap-1.5 text-xs font-medium text-zinc-600">
+                    <span className="flex items-center gap-1.5 text-xs font-medium text-slate-600">
                       <span className={`size-2 rounded-full ${stage?.dotClass}`} aria-hidden="true" />
                       {stage?.label}
                     </span>
-                    <span className="w-20 text-right font-medium text-zinc-900 tabular-nums">
+                    <span className="w-20 text-right font-medium text-slate-900 tabular-nums">
                       {formatCurrency(deal.value)}
                     </span>
                   </div>
@@ -178,7 +178,7 @@ async function ContactDetails({ params }: ContactDetailsProps) {
             })}
           </ul>
         ) : (
-          <p className="px-5 py-8 text-center text-sm text-zinc-500">No deals yet.</p>
+          <p className="px-5 py-8 text-center text-sm text-slate-500">No deals yet.</p>
         )}
       </Card>
     </>
@@ -189,15 +189,15 @@ function ContactDetailsSkeleton() {
   return (
     <div className="space-y-6" aria-busy="true" aria-label="Loading contact">
       <Card className="flex items-center gap-5 p-6">
-        <div className="size-16 animate-pulse rounded-full bg-zinc-100" />
+        <div className="size-16 animate-pulse rounded-full bg-slate-100" />
         <div className="flex-1 space-y-2">
-          <div className="h-6 w-48 animate-pulse rounded bg-zinc-100" />
-          <div className="h-4 w-64 animate-pulse rounded bg-zinc-100" />
+          <div className="h-6 w-48 animate-pulse rounded bg-slate-100" />
+          <div className="h-4 w-64 animate-pulse rounded bg-slate-100" />
         </div>
       </Card>
       <div className="grid gap-6 lg:grid-cols-3">
-        <div className="h-56 animate-pulse rounded-xl border border-zinc-200 bg-white lg:col-span-2" />
-        <div className="h-56 animate-pulse rounded-xl border border-zinc-200 bg-white" />
+        <div className="h-56 animate-pulse rounded-xl border border-slate-200 bg-white lg:col-span-2" />
+        <div className="h-56 animate-pulse rounded-xl border border-slate-200 bg-white" />
       </div>
     </div>
   );
@@ -212,9 +212,9 @@ interface DetailRowProps {
 function DetailRow({ icon: Icon, label, children }: DetailRowProps) {
   return (
     <div className="flex items-center gap-4 px-5 py-3.5 text-sm">
-      <Icon className="size-4 shrink-0 text-zinc-400" />
-      <dt className="w-24 shrink-0 text-zinc-500">{label}</dt>
-      <dd className="min-w-0 truncate text-zinc-900">{children}</dd>
+      <Icon className="size-4 shrink-0 text-slate-400" />
+      <dt className="w-24 shrink-0 text-slate-500">{label}</dt>
+      <dd className="min-w-0 truncate text-slate-900">{children}</dd>
     </div>
   );
 }

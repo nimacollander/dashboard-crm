@@ -1,45 +1,30 @@
-import {
-  BriefcaseIcon,
-  DollarIcon,
-  TargetIcon,
-  UserPlusIcon,
-} from "@/components/icons";
-import type { Contact, Deal, Metric } from "@/types";
+import type { Contact, Deal } from "@/types";
 
-export const METRICS: Metric[] = [
-  {
-    id: "revenue",
-    label: "Total Revenue",
-    value: "$128,430",
-    change: 12.4,
-    trend: "up",
-    icon: DollarIcon,
-  },
-  {
-    id: "leads",
-    label: "New Leads",
-    value: "342",
-    change: 8.1,
-    trend: "up",
-    icon: UserPlusIcon,
-  },
-  {
-    id: "conversion",
-    label: "Conversion Rate",
-    value: "24.8%",
-    change: 1.6,
-    trend: "down",
-    icon: TargetIcon,
-  },
-  {
-    id: "deals",
-    label: "Active Deals",
-    value: "57",
-    change: 4.3,
-    trend: "up",
-    icon: BriefcaseIcon,
-  },
+/** Monthly revenue quota for the sales team. */
+export const MONTHLY_QUOTA = 200_000;
+
+/**
+ * Revenue closed on each day of October 2026 so far (index 0 = Oct 1).
+ * Weekends are zero; the last entry is "today" (see DEMO_TODAY).
+ */
+export const DAILY_CLOSED_REVENUE: number[] = [
+  4200, 6800, 0, 0, 9100, 3500, 12400, 7600, 5200, 0, 0, 18500, 9800, 14200,
+  17600, 19530, 0, 0,
 ];
+
+/** Weekly history for the KPI sparklines, oldest first (last 11 weeks). */
+export const KPI_HISTORY = {
+  newLeads: [61, 58, 70, 66, 74, 69, 80, 77, 85, 79, 88],
+  winRate: [48, 50, 47, 52, 51, 55, 53, 54, 56, 55, 58],
+  activeDeals: [9, 10, 10, 11, 12, 11, 12, 13, 12, 14, 13],
+  avgDealSize: [
+    28_000, 29_500, 27_000, 31_000, 30_000, 32_500, 33_000, 31_500, 34_000,
+    33_000, 35_500,
+  ],
+};
+
+/** Figures without a live source yet. */
+export const NEW_LEADS_THIS_WEEK = 92;
 
 export const CONTACTS: Contact[] = [
   {

@@ -13,7 +13,7 @@ interface ContactAvatarProps {
 export function ContactAvatar({ name, size = "sm" }: ContactAvatarProps) {
   return (
     <span
-      className={`flex shrink-0 items-center justify-center rounded-full bg-zinc-100 font-semibold text-zinc-600 ${SIZE_STYLES[size]}`}
+      className={`flex shrink-0 items-center justify-center rounded-full bg-slate-100 font-semibold text-slate-600 ${SIZE_STYLES[size]}`}
       aria-hidden="true"
     >
       {getInitials(name)}

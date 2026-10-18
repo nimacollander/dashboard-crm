@@ -179,7 +179,7 @@ export function DealsBoard({ deals }: DealsBoardProps) {
           {activeDeal && (
             <DealCard
               deal={activeDeal}
-              className="rotate-2 cursor-grabbing shadow-lg ring-2 ring-indigo-500/30"
+              className="rotate-2 cursor-grabbing shadow-lg ring-2 ring-accent-500/30"
             />
           )}
         </DragOverlay>

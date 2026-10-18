@@ -21,21 +21,21 @@ export function PipelineColumn({ stage, deals }: PipelineColumnProps) {
       aria-labelledby={headingId}
       className={`flex w-72 shrink-0 flex-col rounded-xl border p-3 transition-colors xl:w-auto xl:min-w-0 xl:flex-1 ${
         isOver
-          ? "border-indigo-300 bg-indigo-50/60"
-          : "border-transparent bg-zinc-100/70"
+          ? "border-accent-300 bg-accent-50/60"
+          : "border-transparent bg-slate-100/70"
       }`}
     >
       <header className="mb-3 px-1">
         <div className="flex items-center gap-2">
           <span className={`size-2 rounded-full ${stage.dotClass}`} aria-hidden="true" />
-          <h2 id={headingId} className="text-sm font-semibold text-zinc-900">
+          <h2 id={headingId} className="text-sm font-semibold text-slate-900">
             {stage.label}
           </h2>
-          <span className="rounded-full bg-white px-1.5 text-xs font-medium text-zinc-500 tabular-nums">
+          <span className="rounded-full bg-white px-1.5 text-xs font-medium text-slate-500 tabular-nums">
             {deals.length}
           </span>
         </div>
-        <p className="mt-1 text-xs text-zinc-500 tabular-nums">
+        <p className="mt-1 text-xs text-slate-500 tabular-nums">
           {formatCurrency(sumDealValues(deals))}
         </p>
       </header>
@@ -47,7 +47,7 @@ export function PipelineColumn({ stage, deals }: PipelineColumnProps) {
           ))}
         </ul>
       ) : (
-        <p className="flex min-h-24 flex-1 items-center justify-center rounded-lg border-2 border-dashed border-zinc-200 text-xs text-zinc-400">
+        <p className="flex min-h-24 flex-1 items-center justify-center rounded-lg border-2 border-dashed border-slate-200 text-xs text-slate-400">
           Drop deals here
         </p>
       )}

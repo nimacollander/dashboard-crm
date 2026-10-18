@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { CalendarIcon } from "@/components/icons";
-import { formatCurrency, formatDate, getInitials } from "@/lib/format";
+import { DEMO_TODAY } from "@/lib/demo-date";
+import { formatCurrency, formatDate, formatShortDate, getInitials } from "@/lib/format";
 import type { DealWithContact } from "@/types";
 
 interface DealCardProps {
@@ -14,10 +15,10 @@ interface DealCardProps {
 export function DealCard({ deal, handle, className = "" }: DealCardProps) {
   return (
     <article
-      className={`rounded-lg border border-zinc-200 bg-white p-3.5 shadow-sm ${className}`}
+      className={`rounded-lg border border-slate-200 bg-white p-3.5 shadow-sm ${className}`}
     >
       <div className="flex items-start justify-between gap-2">
-        <h3 className="text-sm leading-snug font-medium text-zinc-900">
+        <h3 className="text-sm leading-snug font-medium text-slate-900">
           {deal.title}
         </h3>
         {handle}
@@ -25,22 +26,28 @@ export function DealCard({ deal, handle, className = "" }: DealCardProps) {
 
       <Link
         href={`/contacts/${deal.contact.id}`}
-        className="mt-1 block truncate text-xs text-zinc-500 hover:text-indigo-600 hover:underline"
+        className="mt-1 block truncate text-xs text-slate-500 hover:text-accent-600 hover:underline"
       >
         {deal.contact.name} · {deal.contact.company}
       </Link>
 
       <div className="mt-3 flex items-center justify-between">
-        <span className="text-sm font-semibold text-zinc-900 tabular-nums">
+        <span className="text-sm font-semibold text-slate-900 tabular-nums">
           {formatCurrency(deal.value)}
         </span>
         <div className="flex items-center gap-2">
-          <span className="flex items-center gap-1 text-xs text-zinc-500">
+          <span
+            className="flex items-center gap-1 text-xs whitespace-nowrap text-slate-500"
+            title={`Expected close: ${formatDate(deal.expectedClose)}`}
+          >
             <CalendarIcon className="size-3.5" />
-            {formatDate(deal.expectedClose)}
+            {/* The year only appears when it isn't the current one. */}
+            {deal.expectedClose.startsWith(DEMO_TODAY.slice(0, 4))
+              ? formatShortDate(deal.expectedClose)
+              : formatDate(deal.expectedClose)}
           </span>
           <span
-            className="flex size-6 items-center justify-center rounded-full bg-indigo-50 text-[10px] font-semibold text-indigo-700"
+            className="flex size-6 items-center justify-center rounded-full bg-accent-50 text-[10px] font-semibold text-accent-700"
             title={`Owner: ${deal.owner}`}
           >
             {getInitials(deal.owner)}

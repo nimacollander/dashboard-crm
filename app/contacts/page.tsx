@@ -16,10 +16,10 @@ export default function ContactsPage({ searchParams }: PageProps<"/contacts">) {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold tracking-tight text-zinc-900">
+        <h1 className="text-2xl font-display font-semibold tracking-tight text-slate-900">
           Contacts
         </h1>
-        <p className="mt-1 text-sm text-zinc-500">
+        <p className="mt-1 text-sm text-slate-500">
           Every person and company in your pipeline.
         </p>
       </div>
@@ -42,7 +42,7 @@ async function ContactsResults({ searchParams }: ContactsResultsProps) {
 
   return (
     <Card>
-      <div className="flex flex-col gap-3 border-b border-zinc-100 p-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 border-b border-slate-100 p-4 sm:flex-row sm:items-center sm:justify-between">
         <StatusFilter filters={filters} counts={statusCounts} />
         <ContactSearch filters={filters} />
       </div>
@@ -51,28 +51,28 @@ async function ContactsResults({ searchParams }: ContactsResultsProps) {
         <ContactsTable contacts={contacts} filters={filters} />
       ) : (
         <div className="px-5 py-16 text-center">
-          <p className="text-sm font-medium text-zinc-900">No contacts found</p>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="text-sm font-medium text-slate-900">No contacts found</p>
+          <p className="mt-1 text-sm text-slate-500">
             {filters.q
               ? `Nothing matches “${filters.q}”. Try a different search.`
               : "No contacts have this status yet."}
           </p>
           <Link
             href="/contacts"
-            className="mt-4 inline-block text-sm font-medium text-indigo-600 hover:text-indigo-700"
+            className="mt-4 inline-block text-sm font-medium text-accent-600 hover:text-accent-700"
           >
             Clear filters
           </Link>
         </div>
       )}
 
-      <div className="flex items-center justify-between border-t border-zinc-100 px-5 py-3 text-xs text-zinc-500">
+      <div className="flex items-center justify-between border-t border-slate-100 px-5 py-3 text-xs text-slate-500">
         <span>
-          Showing <span className="font-medium text-zinc-900">{contacts.length}</span>{" "}
+          Showing <span className="font-medium text-slate-900">{contacts.length}</span>{" "}
           of {total} contacts
         </span>
         {hasFilters && contacts.length > 0 && (
-          <Link href="/contacts" className="font-medium text-indigo-600 hover:text-indigo-700">
+          <Link href="/contacts" className="font-medium text-accent-600 hover:text-accent-700">
             Clear filters
           </Link>
         )}

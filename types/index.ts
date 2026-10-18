@@ -8,17 +8,6 @@ export interface NavItem {
   icon: IconComponent;
 }
 
-export type TrendDirection = "up" | "down";
-
-export interface Metric {
-  id: string;
-  label: string;
-  value: string;
-  change: number;
-  trend: TrendDirection;
-  icon: IconComponent;
-}
-
 export type ContactStatus = "lead" | "prospect" | "customer" | "churned";
 
 export interface Contact {
@@ -72,3 +61,50 @@ export interface DealWithContact extends Deal {
 }
 
 export type ActionResult = { ok: true } | { ok: false; error: string };
+
+export interface PacePoint {
+  day: number;
+  date: string; // ISO date
+  /** Cumulative revenue closed by end of day; null after today. */
+  closed: number | null;
+  /** Run-rate projection from today to month end; null before today. */
+  projected: number | null;
+  /** Where cumulative revenue needs to be to hit quota evenly. */
+  pace: number;
+}
+
+export interface RevenuePace {
+  monthLabel: string;
+  daysInMonth: number;
+  today: number;
+  closed: number;
+  quota: number;
+  paceToDate: number;
+  projected: number;
+  points: PacePoint[];
+}
+
+export interface Kpi {
+  id: string;
+  label: string;
+  value: string;
+  delta: string;
+  direction: "up" | "down" | "flat";
+  /** Whether this direction is good news, which decides the delta color. */
+  isGood: boolean;
+  comparison: string;
+  history: number[];
+}
+
+export interface StagePipeline {
+  stage: DealStage;
+  label: string;
+  count: number;
+  value: number;
+  /** Likelihood a deal in this stage closes, used for the weighted forecast. */
+  probability: number;
+}
+
+export interface UpcomingDeal extends DealWithContact {
+  daysUntilClose: number;
+}

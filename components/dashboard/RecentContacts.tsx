@@ -11,12 +11,12 @@ export function RecentContacts({ contacts }: RecentContactsProps) {
   return (
     <Card>
       <CardHeader
-        title="Recent Contacts"
-        description="The latest people your team has been in touch with."
+        title="Recent contacts"
+        description="People your team spoke to most recently"
         action={
           <Link
             href="/contacts"
-            className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+            className="text-sm font-medium text-accent-600 hover:text-accent-700"
           >
             View all
           </Link>
@@ -24,7 +24,7 @@ export function RecentContacts({ contacts }: RecentContactsProps) {
       />
 
       {contacts.length === 0 ? (
-        <p className="px-5 py-10 text-center text-sm text-zinc-500">
+        <p className="px-5 py-10 text-center text-sm text-slate-500">
           No contacts yet.
         </p>
       ) : (

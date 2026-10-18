@@ -38,7 +38,7 @@ export function DraggableDeal({ deal }: DraggableDealProps) {
             {...attributes}
             onKeyDown={handleKeyDown}
             aria-label={`Move ${deal.title}`}
-            className="-mt-0.5 -mr-1 shrink-0 cursor-grab rounded p-0.5 text-zinc-300 hover:bg-zinc-100 hover:text-zinc-500 focus-visible:text-zinc-600 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:outline-none"
+            className="-mt-0.5 -mr-1 shrink-0 cursor-grab rounded p-0.5 text-slate-300 hover:bg-slate-100 hover:text-slate-500 focus-visible:text-slate-600 focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:outline-none"
           >
             <GripIcon className="size-4" />
           </button>

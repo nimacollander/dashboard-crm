@@ -43,18 +43,18 @@ export function ContactSearch({ filters }: ContactSearchProps) {
 
   return (
     <div className="relative w-full sm:max-w-xs">
-      <SearchIcon className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-zinc-400" />
+      <SearchIcon className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-slate-400" />
       <input
         type="search"
         value={value}
         onChange={(event) => handleChange(event.target.value)}
         placeholder="Search name, email, company…"
         aria-label="Search contacts"
-        className="w-full rounded-lg border border-zinc-200 bg-white py-2 pr-9 pl-9 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:outline-none"
+        className="w-full rounded-lg border border-slate-200 bg-white py-2 pr-9 pl-9 text-sm text-slate-900 placeholder:text-slate-400 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 focus:outline-none"
       />
       {isPending && (
         <span
-          className="absolute top-1/2 right-3 size-4 -translate-y-1/2 animate-spin rounded-full border-2 border-zinc-200 border-t-indigo-600"
+          className="absolute top-1/2 right-3 size-4 -translate-y-1/2 animate-spin rounded-full border-2 border-slate-200 border-t-accent-600"
           role="status"
           aria-label="Searching"
         />
