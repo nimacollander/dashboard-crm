@@ -53,3 +53,22 @@ export interface ContactQueryResult {
   statusCounts: StatusCounts;
   total: number;
 }
+
+export type DealStage = "qualified" | "proposal" | "negotiation" | "won" | "lost";
+
+export interface Deal {
+  id: string;
+  title: string;
+  contactId: string;
+  value: number;
+  stage: DealStage;
+  owner: string;
+  expectedClose: string; // ISO date
+}
+
+/** A deal joined with the contact fields the UI needs to display it. */
+export interface DealWithContact extends Deal {
+  contact: Pick<Contact, "id" | "name" | "company">;
+}
+
+export type ActionResult = { ok: true } | { ok: false; error: string };

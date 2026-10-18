@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import { ContactAvatar } from "@/components/contacts/ContactAvatar";
 import {
   ArrowLeftIcon,
@@ -13,6 +13,8 @@ import {
 import { Card, CardHeader } from "@/components/ui/Card";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { getAllContacts, getContactById } from "@/lib/contacts";
+import { DEAL_STAGES } from "@/lib/deal-stages";
+import { getDealsForContact } from "@/lib/deals";
 import { formatCurrency, formatDate } from "@/lib/format";
 import type { IconComponent } from "@/types";
 
@@ -30,11 +32,9 @@ export async function generateMetadata({
   return { title: contact?.name ?? "Contact not found" };
 }
 
-export default async function ContactPage({ params }: PageProps<"/contacts/[id]">) {
-  const { id } = await params;
-  const contact = getContactById(id);
-  if (!contact) notFound();
-
+// Not async: the back link renders instantly as part of the static shell,
+// and everything that depends on the contact ID streams in inside Suspense.
+export default function ContactPage({ params }: PageProps<"/contacts/[id]">) {
   return (
     <div className="space-y-6">
       <Link
@@ -44,6 +44,26 @@ export default async function ContactPage({ params }: PageProps<"/contacts/[id]"
         <ArrowLeftIcon className="size-4" />
         All contacts
       </Link>
+
+      <Suspense fallback={<ContactDetailsSkeleton />}>
+        <ContactDetails params={params} />
+      </Suspense>
+    </div>
+  );
+}
+
+interface ContactDetailsProps {
+  params: PageProps<"/contacts/[id]">["params"];
+}
+
+async function ContactDetails({ params }: ContactDetailsProps) {
+  const { id } = await params;
+  const contact = getContactById(id);
+  if (!contact) notFound();
+  const deals = await getDealsForContact(contact.id);
+
+  return (
+    <>
 
       <Card className="flex flex-col gap-5 p-6 sm:flex-row sm:items-center">
         <ContactAvatar name={contact.name} size="lg" />
@@ -120,6 +140,64 @@ export default async function ContactPage({ params }: PageProps<"/contacts/[id]"
             </div>
           </dl>
         </Card>
+      </div>
+
+      <Card>
+        <CardHeader
+          title="Deals"
+          description={`${deals.length} ${deals.length === 1 ? "deal" : "deals"} with ${contact.company}`}
+          action={
+            <Link href="/deals" className="text-sm font-medium text-indigo-600 hover:text-indigo-700">
+              View pipeline
+            </Link>
+          }
+        />
+        {deals.length > 0 ? (
+          <ul className="divide-y divide-zinc-100">
+            {deals.map((deal) => {
+              const stage = DEAL_STAGES.find((item) => item.id === deal.stage);
+              return (
+                <li key={deal.id} className="flex items-center justify-between gap-4 px-5 py-3.5 text-sm">
+                  <div className="min-w-0">
+                    <p className="truncate font-medium text-zinc-900">{deal.title}</p>
+                    <p className="mt-0.5 text-xs text-zinc-500">
+                      Expected close {formatDate(deal.expectedClose)} · {deal.owner}
+                    </p>
+                  </div>
+                  <div className="flex shrink-0 items-center gap-4">
+                    <span className="flex items-center gap-1.5 text-xs font-medium text-zinc-600">
+                      <span className={`size-2 rounded-full ${stage?.dotClass}`} aria-hidden="true" />
+                      {stage?.label}
+                    </span>
+                    <span className="w-20 text-right font-medium text-zinc-900 tabular-nums">
+                      {formatCurrency(deal.value)}
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p className="px-5 py-8 text-center text-sm text-zinc-500">No deals yet.</p>
+        )}
+      </Card>
+    </>
+  );
+}
+
+function ContactDetailsSkeleton() {
+  return (
+    <div className="space-y-6" aria-busy="true" aria-label="Loading contact">
+      <Card className="flex items-center gap-5 p-6">
+        <div className="size-16 animate-pulse rounded-full bg-zinc-100" />
+        <div className="flex-1 space-y-2">
+          <div className="h-6 w-48 animate-pulse rounded bg-zinc-100" />
+          <div className="h-4 w-64 animate-pulse rounded bg-zinc-100" />
+        </div>
+      </Card>
+      <div className="grid gap-6 lg:grid-cols-3">
+        <div className="h-56 animate-pulse rounded-xl border border-zinc-200 bg-white lg:col-span-2" />
+        <div className="h-56 animate-pulse rounded-xl border border-zinc-200 bg-white" />
       </div>
     </div>
   );

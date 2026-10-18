@@ -1,9 +1,16 @@
 import { MetricCard } from "@/components/dashboard/MetricCard";
 import { RecentContacts } from "@/components/dashboard/RecentContacts";
 import { getRecentContacts } from "@/lib/contacts";
+import { isOpenDeal } from "@/lib/deal-stages";
+import { getDeals } from "@/lib/deals";
 import { METRICS } from "@/lib/mock-data";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const activeDeals = (await getDeals()).filter(isOpenDeal).length;
+  const metrics = METRICS.map((metric) =>
+    metric.id === "deals" ? { ...metric, value: String(activeDeals) } : metric,
+  );
+
   return (
     <div className="space-y-8">
       <div>
@@ -19,7 +26,7 @@ export default function DashboardPage() {
         aria-label="Key metrics"
         className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"
       >
-        {METRICS.map((metric) => (
+        {metrics.map((metric) => (
           <MetricCard key={metric.id} metric={metric} />
         ))}
       </section>
