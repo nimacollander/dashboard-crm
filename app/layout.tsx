@@ -18,8 +18,8 @@ const plexSans = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Dashboard · Pulse CRM",
-    template: "%s · Pulse CRM",
+    default: "Dashboard · Dashboard CRM",
+    template: "%s · Dashboard CRM",
   },
   description: "A modern business dashboard and CRM built with Next.js.",
 };

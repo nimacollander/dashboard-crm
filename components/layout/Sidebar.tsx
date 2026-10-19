@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { CloseIcon, PulseMarkIcon } from "@/components/icons";
+import { CloseIcon, LogoMarkIcon } from "@/components/icons";
 import { NavLinks, NavLinksFallback } from "@/components/layout/NavLinks";
 
 interface SidebarProps {
@@ -27,10 +27,10 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         <div className="flex h-16 items-center justify-between px-5">
           <span className="flex items-center gap-2.5">
             <span className="flex size-8 items-center justify-center rounded-lg bg-accent-500 text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2)]">
-              <PulseMarkIcon className="size-[18px]" />
+              <LogoMarkIcon className="size-[18px]" />
             </span>
             <span className="font-display text-lg font-semibold tracking-tight text-white">
-              Pulse
+              Dashboard CRM
             </span>
           </span>
           <button

@@ -6,7 +6,7 @@
 }
 
 /*
- * Pulse design tokens.
+ * Design tokens.
  * Neutrals use Tailwind's slate (cool blue-gray, ink = slate-900).
  * The accent is a single blue ramp, shared with the charts so UI and data
  * speak the same color: accent-500 is the "closed revenue" series.

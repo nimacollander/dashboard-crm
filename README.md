@@ -1,4 +1,4 @@
-# Pulse CRM
+# Dashboard CRM
 
 **A sales dashboard and CRM for tracking revenue against quota, managing contacts, and moving deals through a pipeline.**
 
@@ -9,7 +9,7 @@ Built with Next.js 16 (App Router), React 19, TypeScript and Tailwind CSS v4, us
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
 
-![Pulse CRM dashboard](docs/screenshots/dashboard.png)
+![Dashboard CRM dashboard](docs/screenshots/dashboard.png)
 
 ## Contents
 
@@ -25,7 +25,7 @@ Built with Next.js 16 (App Router), React 19, TypeScript and Tailwind CSS v4, us
 
 ## Overview
 
-Pulse is a CRM for a small sales team. It answers three everyday questions:
+Dashboard CRM is a CRM for a small sales team. It answers three everyday questions:
 
 1. **Are we on track this month?** The dashboard compares closed revenue with the quota and projects where the month will finish.
 2. **Who are we talking to?** The contacts list can be searched, filtered and sorted, and each contact has a detail page with their linked deals.
