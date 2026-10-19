@@ -191,3 +191,5 @@ This is a portfolio project, so some parts are simplified on purpose:
 ## Author
 
 **Nima Collander** · [GitHub](https://github.com/nimacollander)
+
+Built with AI-assisted development using Claude Code.
