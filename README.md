@@ -1,4 +1,4 @@
-# Sales CRM & Dashboard
+# Sales Dashboard & CRM
 
 **A sales dashboard and CRM for tracking revenue against quota, managing contacts, and moving deals through a pipeline.**
 
