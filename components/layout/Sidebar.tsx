@@ -30,7 +30,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
               <LogoMarkIcon className="size-[18px]" />
             </span>
             <span className="font-display text-lg font-semibold tracking-tight text-white">
-              Dashboard CRM
+              Sales CRM
             </span>
           </span>
           <button
