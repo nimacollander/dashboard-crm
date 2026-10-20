@@ -52,6 +52,13 @@ The project focuses on how a production React app should behave: fast first load
 - **KPI tiles** for leads, win rate, active deals and average deal size, each with a 12-week sparkline.
 - **Open pipeline by stage** with a weighted forecast, and a list of deals closing soon.
 
+#### How the numbers are worked out
+
+- **Pace** is the quota spread evenly across the month: by day 10 of a 30-day month, pace is one third of the quota.
+- **Projection** assumes the rest of the month continues at the current run rate (revenue closed so far ÷ days elapsed).
+- **Needed per day** is the revenue still missing from the quota, divided by the days left.
+- **Weighted forecast** multiplies each stage's open value by a typical close rate: 20% for Qualified, 50% for Proposal and 75% for Negotiation.
+
 ### Contacts
 - Search, status filters and sortable columns, all kept in the URL (for example `/contacts?status=lead&sort=name`), so any view can be bookmarked or shared.
 - A detail page for each contact with their information and linked deals.
