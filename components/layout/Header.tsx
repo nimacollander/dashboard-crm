@@ -66,7 +66,7 @@ export function Header({ onMenuClick }: HeaderProps) {
           className="flex size-9 shrink-0 items-center justify-center rounded-full bg-accent-100 text-sm font-semibold text-accent-700 hover:ring-4 hover:ring-accent-50"
           aria-label="Open profile menu"
         >
-          NC
+          DA
         </button>
       </div>
     </header>

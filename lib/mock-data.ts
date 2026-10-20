@@ -29,8 +29,8 @@ export const NEW_LEADS_THIS_WEEK = 92;
 export const CONTACTS: Contact[] = [
   {
     id: "c_01",
-    name: "Olivia Martin",
-    email: "olivia@northwind.io",
+    name: "VP of Operations",
+    email: "ops@northwind.io",
     phone: "+1 (415) 555-0132",
     jobTitle: "VP of Operations",
     company: "Northwind",
@@ -42,8 +42,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_02",
-    name: "Jackson Lee",
-    email: "jackson@acmecorp.com",
+    name: "Head of Procurement",
+    email: "procurement@acmecorp.com",
     phone: "+1 (212) 555-0187",
     jobTitle: "Head of Procurement",
     company: "Acme Corp",
@@ -55,8 +55,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_03",
-    name: "Isabella Nguyen",
-    email: "isabella@globex.dev",
+    name: "Engineering Manager",
+    email: "engineering@globex.dev",
     phone: "+1 (512) 555-0144",
     jobTitle: "Engineering Manager",
     company: "Globex",
@@ -68,8 +68,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_04",
-    name: "William Kim",
-    email: "will@initech.co",
+    name: "CTO",
+    email: "cto@initech.co",
     phone: "+1 (206) 555-0119",
     jobTitle: "CTO",
     company: "Initech",
@@ -81,8 +81,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_05",
-    name: "Sofia Davis",
-    email: "sofia@umbrella.com",
+    name: "Marketing Director",
+    email: "marketing@umbrella.com",
     phone: "+1 (312) 555-0176",
     jobTitle: "Marketing Director",
     company: "Umbrella",
@@ -94,8 +94,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_06",
-    name: "Liam Johnson",
-    email: "liam@hooli.com",
+    name: "Product Lead",
+    email: "product@hooli.com",
     phone: "+1 (650) 555-0163",
     jobTitle: "Product Lead",
     company: "Hooli",
@@ -107,8 +107,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_07",
-    name: "Emma Wilson",
-    email: "emma@stark.industries",
+    name: "COO",
+    email: "coo@stark.industries",
     phone: "+1 (310) 555-0128",
     jobTitle: "COO",
     company: "Stark Industries",
@@ -120,8 +120,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_08",
-    name: "Noah Brown",
-    email: "noah@wayne.enterprises",
+    name: "Finance Manager",
+    email: "finance@wayne.enterprises",
     phone: "+1 (617) 555-0191",
     jobTitle: "Finance Manager",
     company: "Wayne Enterprises",
@@ -133,8 +133,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_09",
-    name: "Ava Garcia",
-    email: "ava@soylent.co",
+    name: "Operations Analyst",
+    email: "operations@soylent.co",
     phone: "+1 (303) 555-0155",
     jobTitle: "Operations Analyst",
     company: "Soylent",
@@ -146,8 +146,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_10",
-    name: "Lucas Martinez",
-    email: "lucas@cyberdyne.ai",
+    name: "Director of IT",
+    email: "it@cyberdyne.ai",
     phone: "+1 (408) 555-0137",
     jobTitle: "Director of IT",
     company: "Cyberdyne",
@@ -159,8 +159,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_11",
-    name: "Mia Anderson",
-    email: "mia@vandelay.com",
+    name: "Import Specialist",
+    email: "imports@vandelay.com",
     phone: "+1 (718) 555-0102",
     jobTitle: "Import Specialist",
     company: "Vandelay Industries",
@@ -172,8 +172,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_12",
-    name: "Ethan Thomas",
-    email: "ethan@pied-piper.com",
+    name: "CEO",
+    email: "ceo@pied-piper.com",
     phone: "+1 (415) 555-0148",
     jobTitle: "CEO",
     company: "Pied Piper",
@@ -185,8 +185,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_13",
-    name: "Charlotte Taylor",
-    email: "charlotte@oscorp.com",
+    name: "Research Lead",
+    email: "research@oscorp.com",
     phone: "+1 (646) 555-0173",
     jobTitle: "Research Lead",
     company: "Oscorp",
@@ -198,8 +198,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_14",
-    name: "James Moore",
-    email: "james@massive.dynamic",
+    name: "Program Director",
+    email: "programs@massive.dynamic",
     phone: "+1 (202) 555-0166",
     jobTitle: "Program Director",
     company: "Massive Dynamic",
@@ -211,8 +211,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_15",
-    name: "Amelia Jackson",
-    email: "amelia@tyrell.corp",
+    name: "Design Lead",
+    email: "design@tyrell.corp",
     phone: "+1 (503) 555-0121",
     jobTitle: "Design Lead",
     company: "Tyrell Corp",
@@ -224,8 +224,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_16",
-    name: "Benjamin White",
-    email: "ben@gringotts.bank",
+    name: "Treasury Manager",
+    email: "treasury@gringotts.bank",
     phone: "+1 (305) 555-0194",
     jobTitle: "Treasury Manager",
     company: "Gringotts",
@@ -237,8 +237,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_17",
-    name: "Harper Harris",
-    email: "harper@monarch.co",
+    name: "Sales Director",
+    email: "sales@monarch.co",
     phone: "+1 (615) 555-0158",
     jobTitle: "Sales Director",
     company: "Monarch",
@@ -250,8 +250,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_18",
-    name: "Henry Clark",
-    email: "henry@aperture.science",
+    name: "Lab Operations",
+    email: "lab@aperture.science",
     phone: "+1 (480) 555-0139",
     jobTitle: "Lab Operations",
     company: "Aperture Science",
@@ -263,8 +263,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_19",
-    name: "Evelyn Lewis",
-    email: "evelyn@dundermifflin.com",
+    name: "Regional Manager",
+    email: "regional@dundermifflin.com",
     phone: "+1 (570) 555-0184",
     jobTitle: "Regional Manager",
     company: "Dunder Mifflin",
@@ -276,8 +276,8 @@ export const CONTACTS: Contact[] = [
   },
   {
     id: "c_20",
-    name: "Alexander Walker",
-    email: "alex@bluesun.io",
+    name: "Head of Growth",
+    email: "growth@bluesun.io",
     phone: "+1 (720) 555-0112",
     jobTitle: "Head of Growth",
     company: "Blue Sun",
@@ -296,7 +296,7 @@ export const DEALS: Deal[] = [
     contactId: "c_01",
     value: 18500,
     stage: "won",
-    owner: "Alex Rivera",
+    owner: "East Team",
     expectedClose: "2026-09-30",
   },
   {
@@ -305,7 +305,7 @@ export const DEALS: Deal[] = [
     contactId: "c_02",
     value: 9200,
     stage: "proposal",
-    owner: "Sam Patel",
+    owner: "West Team",
     expectedClose: "2026-11-14",
   },
   {
@@ -314,7 +314,7 @@ export const DEALS: Deal[] = [
     contactId: "c_03",
     value: 4000,
     stage: "qualified",
-    owner: "Jordan Lee",
+    owner: "Central Team",
     expectedClose: "2026-12-05",
   },
   {
@@ -323,7 +323,7 @@ export const DEALS: Deal[] = [
     contactId: "c_04",
     value: 26750,
     stage: "won",
-    owner: "Alex Rivera",
+    owner: "East Team",
     expectedClose: "2026-10-10",
   },
   {
@@ -332,7 +332,7 @@ export const DEALS: Deal[] = [
     contactId: "c_05",
     value: 8400,
     stage: "lost",
-    owner: "Sam Patel",
+    owner: "West Team",
     expectedClose: "2026-08-20",
   },
   {
@@ -341,7 +341,7 @@ export const DEALS: Deal[] = [
     contactId: "c_06",
     value: 12400,
     stage: "negotiation",
-    owner: "Jordan Lee",
+    owner: "Central Team",
     expectedClose: "2026-10-31",
   },
   {
@@ -350,7 +350,7 @@ export const DEALS: Deal[] = [
     contactId: "c_07",
     value: 54000,
     stage: "won",
-    owner: "Alex Rivera",
+    owner: "East Team",
     expectedClose: "2026-09-15",
   },
   {
@@ -359,7 +359,7 @@ export const DEALS: Deal[] = [
     contactId: "c_08",
     value: 7500,
     stage: "qualified",
-    owner: "Sam Patel",
+    owner: "West Team",
     expectedClose: "2026-12-12",
   },
   {
@@ -368,7 +368,7 @@ export const DEALS: Deal[] = [
     contactId: "c_09",
     value: 6800,
     stage: "proposal",
-    owner: "Jordan Lee",
+    owner: "Central Team",
     expectedClose: "2026-11-21",
   },
   {
@@ -377,7 +377,7 @@ export const DEALS: Deal[] = [
     contactId: "c_10",
     value: 31200,
     stage: "negotiation",
-    owner: "Alex Rivera",
+    owner: "East Team",
     expectedClose: "2026-10-28",
   },
   {
@@ -386,7 +386,7 @@ export const DEALS: Deal[] = [
     contactId: "c_11",
     value: 2500,
     stage: "qualified",
-    owner: "Sam Patel",
+    owner: "West Team",
     expectedClose: "2026-12-19",
   },
   {
@@ -395,7 +395,7 @@ export const DEALS: Deal[] = [
     contactId: "c_12",
     value: 22000,
     stage: "negotiation",
-    owner: "Jordan Lee",
+    owner: "Central Team",
     expectedClose: "2026-11-07",
   },
   {
@@ -404,7 +404,7 @@ export const DEALS: Deal[] = [
     contactId: "c_13",
     value: 12600,
     stage: "lost",
-    owner: "Alex Rivera",
+    owner: "East Team",
     expectedClose: "2026-07-30",
   },
   {
@@ -413,7 +413,7 @@ export const DEALS: Deal[] = [
     contactId: "c_14",
     value: 41500,
     stage: "won",
-    owner: "Sam Patel",
+    owner: "West Team",
     expectedClose: "2026-09-25",
   },
   {
@@ -422,7 +422,7 @@ export const DEALS: Deal[] = [
     contactId: "c_15",
     value: 3200,
     stage: "qualified",
-    owner: "Jordan Lee",
+    owner: "Central Team",
     expectedClose: "2027-01-09",
   },
   {
@@ -431,7 +431,7 @@ export const DEALS: Deal[] = [
     contactId: "c_16",
     value: 15800,
     stage: "proposal",
-    owner: "Alex Rivera",
+    owner: "East Team",
     expectedClose: "2026-11-28",
   },
   {
@@ -440,7 +440,7 @@ export const DEALS: Deal[] = [
     contactId: "c_17",
     value: 19900,
     stage: "proposal",
-    owner: "Sam Patel",
+    owner: "West Team",
     expectedClose: "2026-11-03",
   },
   {
@@ -449,7 +449,7 @@ export const DEALS: Deal[] = [
     contactId: "c_18",
     value: 5600,
     stage: "qualified",
-    owner: "Jordan Lee",
+    owner: "Central Team",
     expectedClose: "2026-12-30",
   },
   {
@@ -458,7 +458,7 @@ export const DEALS: Deal[] = [
     contactId: "c_19",
     value: 5200,
     stage: "lost",
-    owner: "Alex Rivera",
+    owner: "East Team",
     expectedClose: "2026-08-05",
   },
   {
@@ -467,7 +467,7 @@ export const DEALS: Deal[] = [
     contactId: "c_20",
     value: 11300,
     stage: "proposal",
-    owner: "Sam Patel",
+    owner: "West Team",
     expectedClose: "2026-12-02",
   },
 ];

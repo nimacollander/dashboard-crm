@@ -75,7 +75,7 @@ async function ContactDetails({ params }: ContactDetailsProps) {
             <StatusBadge status={contact.status} />
           </div>
           <p className="mt-1 text-sm text-slate-500">
-            {contact.jobTitle} at {contact.company}
+            {contact.company}
           </p>
         </div>
         <div className="flex gap-2">

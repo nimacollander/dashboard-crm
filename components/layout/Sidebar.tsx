@@ -54,10 +54,10 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
         <div className="m-3 flex items-center gap-3 rounded-lg bg-white/5 p-3">
           <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent-100 text-xs font-semibold text-accent-700">
-            NC
+            DA
           </span>
           <div className="min-w-0 text-xs">
-            <p className="truncate font-medium text-white">Nima Collander</p>
+            <p className="truncate font-medium text-white">Demo Account</p>
             <p className="truncate text-slate-400">Admin · Demo data</p>
           </div>
         </div>
