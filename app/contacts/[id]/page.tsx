@@ -3,13 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense, type ReactNode } from "react";
 import { ContactAvatar } from "@/components/contacts/ContactAvatar";
-import {
-  ArrowLeftIcon,
-  BuildingIcon,
-  MailIcon,
-  MapPinIcon,
-  PhoneIcon,
-} from "@/components/icons";
+import { ArrowLeftIcon, MailIcon } from "@/components/icons";
 import { Card, CardHeader } from "@/components/ui/Card";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { getAllContacts, getContactById } from "@/lib/contacts";
@@ -74,29 +68,17 @@ async function ContactDetails({ params }: ContactDetailsProps) {
             </h1>
             <StatusBadge status={contact.status} />
           </div>
-          <p className="mt-1 text-sm text-slate-500">
-            {contact.company}
-          </p>
         </div>
-        <div className="flex gap-2">
-          <a
-            href={`mailto:${contact.email}`}
-            className="inline-flex items-center gap-2 rounded-lg bg-accent-600 px-3.5 py-2 text-sm font-medium text-white shadow-sm hover:bg-accent-500"
-          >
-            <MailIcon className="size-4" />
-            Email
-          </a>
-          <a
-            href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`}
-            className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3.5 py-2 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50"
-          >
-            <PhoneIcon className="size-4" />
-            Call
-          </a>
-        </div>
+        <a
+          href={`mailto:${contact.email}`}
+          className="inline-flex items-center gap-2 self-start rounded-lg bg-accent-600 px-3.5 py-2 text-sm font-medium text-white shadow-sm hover:bg-accent-500 sm:self-auto"
+        >
+          <MailIcon className="size-4" />
+          Email
+        </a>
       </Card>
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-6 lg:grid-cols-3 lg:items-start">
         <Card className="lg:col-span-2">
           <CardHeader title="Contact details" />
           <dl className="divide-y divide-slate-100">
@@ -104,15 +86,6 @@ async function ContactDetails({ params }: ContactDetailsProps) {
               <a href={`mailto:${contact.email}`} className="text-accent-600 hover:underline">
                 {contact.email}
               </a>
-            </DetailRow>
-            <DetailRow icon={PhoneIcon} label="Phone">
-              {contact.phone}
-            </DetailRow>
-            <DetailRow icon={BuildingIcon} label="Company">
-              {contact.company}
-            </DetailRow>
-            <DetailRow icon={MapPinIcon} label="Location">
-              {contact.location}
             </DetailRow>
           </dl>
         </Card>
@@ -145,7 +118,7 @@ async function ContactDetails({ params }: ContactDetailsProps) {
       <Card>
         <CardHeader
           title="Deals"
-          description={`${deals.length} ${deals.length === 1 ? "deal" : "deals"} with ${contact.company}`}
+          description={`${deals.length} ${deals.length === 1 ? "deal" : "deals"} with ${contact.name}`}
           action={
             <Link href="/deals" className="text-sm font-medium text-accent-600 hover:text-accent-700">
               View pipeline
@@ -192,7 +165,6 @@ function ContactDetailsSkeleton() {
         <div className="size-16 animate-pulse rounded-full bg-slate-100" />
         <div className="flex-1 space-y-2">
           <div className="h-6 w-48 animate-pulse rounded bg-slate-100" />
-          <div className="h-4 w-64 animate-pulse rounded bg-slate-100" />
         </div>
       </Card>
       <div className="grid gap-6 lg:grid-cols-3">

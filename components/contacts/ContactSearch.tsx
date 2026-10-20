@@ -48,7 +48,7 @@ export function ContactSearch({ filters }: ContactSearchProps) {
         type="search"
         value={value}
         onChange={(event) => handleChange(event.target.value)}
-        placeholder="Search name, email, company…"
+        placeholder="Search name or email…"
         aria-label="Search contacts"
         className="w-full rounded-lg border border-slate-200 bg-white py-2 pr-9 pl-9 text-sm text-slate-900 placeholder:text-slate-400 focus:border-accent-500 focus:ring-2 focus:ring-accent-500/20 focus:outline-none"
       />

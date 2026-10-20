@@ -14,10 +14,6 @@ export interface Contact {
   id: string;
   name: string;
   email: string;
-  phone: string;
-  jobTitle: string;
-  company: string;
-  location: string;
   status: ContactStatus;
   dealValue: number;
   lastContacted: string; // ISO date
@@ -57,7 +53,7 @@ export interface Deal {
 
 /** A deal joined with the contact fields the UI needs to display it. */
 export interface DealWithContact extends Deal {
-  contact: Pick<Contact, "id" | "name" | "company">;
+  contact: Pick<Contact, "id" | "name">;
 }
 
 export type ActionResult = { ok: true } | { ok: false; error: string };

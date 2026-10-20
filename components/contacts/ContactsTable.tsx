@@ -18,7 +18,6 @@ interface Column {
 
 const COLUMNS: Column[] = [
   { label: "Name", sortKey: "name" },
-  { label: "Company" },
   { label: "Status" },
   { label: "Deal Value", sortKey: "dealValue", align: "right" },
   { label: "Last Contacted", sortKey: "lastContacted", align: "right" },
@@ -58,7 +57,6 @@ export function ContactsTable({ contacts, filters }: ContactsTableProps) {
                   </div>
                 </div>
               </td>
-              <td className="px-5 py-3 text-slate-600">{contact.company}</td>
               <td className="px-5 py-3">
                 <StatusBadge status={contact.status} />
               </td>

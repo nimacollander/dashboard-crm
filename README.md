@@ -42,6 +42,14 @@ The project focuses on how a production React app should behave: fast first load
     <td align="center"><b>Deals pipeline</b>: drag and drop with optimistic updates</td>
     <td align="center"><b>Mobile</b>: dashboard, navigation drawer and deals board</td>
   </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/contacts.png" alt="Contacts list with status filters, search and sortable columns" /></td>
+    <td width="50%"><img src="docs/screenshots/contact-detail.png" alt="A contact's detail page with deal summary and linked deals" /></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Contacts</b>: search, status filters and sorting kept in the URL</td>
+    <td align="center"><b>Contact detail</b>: deal summary and linked deals</td>
+  </tr>
 </table>
 
 ## Features

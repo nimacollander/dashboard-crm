@@ -99,7 +99,7 @@ export function getSortHref(filters: ContactFilters, key: ContactSortKey): strin
 function matchesQuery(contact: Contact, query: string): boolean {
   if (!query) return true;
   const needle = query.toLowerCase();
-  return [contact.name, contact.email, contact.company].some((field) =>
+  return [contact.name, contact.email].some((field) =>
     field.toLowerCase().includes(needle),
   );
 }

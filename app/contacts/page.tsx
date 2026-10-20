@@ -20,7 +20,7 @@ export default function ContactsPage({ searchParams }: PageProps<"/contacts">) {
           Contacts
         </h1>
         <p className="mt-1 text-sm text-slate-500">
-          Every person and company in your pipeline.
+          Every person in your pipeline.
         </p>
       </div>
 

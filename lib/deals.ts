@@ -22,7 +22,6 @@ function withContact(deal: Deal): DealWithContact {
     contact: {
       id: deal.contactId,
       name: contact?.name ?? "Unknown contact",
-      company: contact?.company ?? "",
     },
   };
 }
