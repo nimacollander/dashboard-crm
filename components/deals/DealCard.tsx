@@ -19,17 +19,15 @@ export function DealCard({ deal, handle, className = "" }: DealCardProps) {
     >
       <div className="flex items-start justify-between gap-2">
         <h3 className="text-sm leading-snug font-medium text-slate-900">
-          {deal.title}
+          <Link
+            href={`/contacts/${deal.contact.id}`}
+            className="hover:text-accent-600 hover:underline"
+          >
+            {deal.title}
+          </Link>
         </h3>
         {handle}
       </div>
-
-      <Link
-        href={`/contacts/${deal.contact.id}`}
-        className="mt-1 block truncate text-xs text-slate-500 hover:text-accent-600 hover:underline"
-      >
-        {deal.contact.name} · {deal.contact.company}
-      </Link>
 
       <div className="mt-3 flex items-center justify-between">
         <span className="text-sm font-semibold text-slate-900 tabular-nums">

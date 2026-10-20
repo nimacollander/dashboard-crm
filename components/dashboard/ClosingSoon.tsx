@@ -38,12 +38,12 @@ export function ClosingSoon({ deals }: ClosingSoonProps) {
             return (
               <li key={deal.id} className="flex items-center gap-4 px-5 py-3">
                 <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-medium text-slate-900">{deal.title}</p>
-                  <p className="mt-0.5 truncate text-xs text-slate-500">
+                  <p className="truncate text-sm font-medium text-slate-900">
                     <Link href={`/contacts/${deal.contact.id}`} className="hover:text-accent-600 hover:underline">
-                      {deal.contact.company}
+                      {deal.title}
                     </Link>
-                    <span aria-hidden="true"> · </span>
+                  </p>
+                  <p className="mt-0.5 truncate text-xs text-slate-500">
                     <span className="inline-flex items-center gap-1">
                       <span className={`size-1.5 rounded-full ${stage?.dotClass}`} aria-hidden="true" />
                       {stage?.label}
