@@ -60,7 +60,8 @@ The project focuses on how a production React app should behave: fast first load
 - **Weighted forecast** multiplies each stage's open value by a typical close rate: 20% for Qualified, 50% for Proposal and 75% for Negotiation.
 
 ### Contacts
-- Search, status filters and sortable columns, all kept in the URL (for example `/contacts?status=lead&sort=name`), so any view can be bookmarked or shared.
+- Search by name or email, filter by status (Lead, Prospect, Customer, Churned) with a live count on each filter, and sort by name, deal value or last contacted.
+- Search, filters and sorting are all kept in the URL (for example `/contacts?status=lead&sort=name`), so any view can be bookmarked or shared.
 - A detail page for each contact with their information and linked deals.
 
 ### Deals pipeline
